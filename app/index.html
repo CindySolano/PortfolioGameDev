@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cindy Solano - Unity & AR/VR Developer portfolio. 3+ years of experience in gaming, immersive technologies, and interactive experiences.">
+    <meta name="keywords" content="Unity Developer, AR, VR, Game Developer, XR, Augmented Reality, Virtual Reality, Portfolio">
+    <meta name="author" content="Cindy Solano">
+    <meta property="og:title" content="Cindy Solano | Unity & AR/VR Developer">
+    <meta property="og:description" content="Portfolio showcasing AR, VR, and game development projects.">
+    <meta property="og:image" content="img/pERSONAJE2.png">
+    <meta property="og:type" content="website">
+    <title>Cindy Solano | Unity & AR/VR Developer</title>
+    <link rel="icon" type="image/png" href="img/pERSONAJE2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="nav-logo">
+                <img src="img/pERSONAJE2.png" alt="Cindy Solano" class="nav-avatar">
+                <span>Cindy Solano</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about" data-en="About" data-es="Acerca de">About</a></li>
+                <li><a href="#skills" data-en="Skills" data-es="Habilidades">Skills</a></li>
+                <li><a href="#portfolio" data-en="Portfolio" data-es="Portafolio">Portfolio</a></li>
+                <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+                    <span class="lang-flag">EN</span>
+                    <i class="fas fa-exchange-alt"></i>
+                    <span class="lang-flag">ES</span>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PARTICLES -->
+    <div class="particles" id="particles"></div>
+
+    <!-- HERO -->
+    <header class="hero" id="hero">
+        <!-- Floating game icons -->
+        <div class="floating-icons">
+            <i class="fas fa-gamepad float-icon" style="top:12%;left:8%;--delay:0s;--duration:6s;--size:1.4rem"></i>
+            <i class="fas fa-star float-icon" style="top:20%;right:15%;--delay:1s;--duration:5s;--size:1rem"></i>
+            <i class="fas fa-bolt float-icon" style="bottom:25%;left:12%;--delay:2s;--duration:7s;--size:1.2rem"></i>
+            <i class="fas fa-code float-icon" style="top:35%;right:8%;--delay:0.5s;--duration:8s;--size:1.1rem"></i>
+            <i class="fas fa-vr-cardboard float-icon" style="bottom:15%;right:20%;--delay:3s;--duration:6s;--size:1.3rem"></i>
+            <i class="fas fa-cube float-icon" style="top:60%;left:5%;--delay:1.5s;--duration:7s;--size:0.9rem"></i>
+            <i class="fas fa-fire float-icon" style="top:15%;left:35%;--delay:2.5s;--duration:5.5s;--size:1.1rem"></i>
+            <i class="fas fa-rocket float-icon" style="bottom:30%;right:5%;--delay:0.8s;--duration:6.5s;--size:1rem"></i>
+            <i class="fas fa-trophy float-icon" style="top:70%;right:35%;--delay:3.5s;--duration:7.5s;--size:1.2rem"></i>
+            <i class="fas fa-gem float-icon" style="bottom:10%;left:30%;--delay:1.8s;--duration:5s;--size:0.9rem"></i>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting" data-en="Hello, I'm" data-es="Hola, soy">Hello, I'm</p>
+                <h1 class="hero-name">Cindy Solano</h1>
+                <h2 class="hero-typed">
+                    <span id="typed-text"></span><span id="cursor">|</span>
+                </h2>
+                <p class="hero-description" data-en="Unity & AR/VR Developer with 3+ years crafting immersive experiences in gaming and interactive technologies." data-es="Desarrolladora Unity & AR/VR con mas de 3 anios creando experiencias inmersivas en videojuegos y tecnologias interactivas.">Unity & AR/VR Developer with 3+ years crafting immersive experiences in gaming and interactive technologies.</p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary" data-en="View My Work" data-es="Ver mi trabajo">View My Work</a>
+                    <a href="#contact" class="btn btn-outline" data-en="Get in Touch" data-es="Contactame">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/pERSONAJE2.png" alt="Cindy Solano - Game Developer" class="avatar-img">
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title" data-en="About Me" data-es="Sobre mi">About Me</h2>
+            <div class="about-content">
+                <p data-en="I am a Unity Developer specialized in immersive technologies, with over 3 years of experience developing interactive applications, VR training simulators, and augmented reality experiences." data-es="Soy desarrolladora Unity especializada en tecnologias inmersivas, con mas de 3 anios de experiencia desarrollando aplicaciones interactivas, simuladores de entrenamiento en VR y experiencias de realidad aumentada.">I am a Unity Developer specialized in immersive technologies, with over 3 years of experience developing interactive applications, VR training simulators, and augmented reality experiences.</p>
+                <p data-en="My work focuses on building real-time 3D solutions that help companies communicate ideas, train teams, and showcase products through engaging and interactive environments. I have participated in the development of enterprise VR simulators, web-based AR experiences, and virtual worlds with real-time networking." data-es="Mi trabajo se enfoca en construir soluciones 3D en tiempo real que ayudan a las empresas a comunicar ideas, entrenar equipos y mostrar productos a traves de entornos interactivos y atractivos. He participado en el desarrollo de simuladores VR para empresas, experiencias de AR para web y mundos virtuales con networking en tiempo real.">My work focuses on building real-time 3D solutions that help companies communicate ideas, train teams, and showcase products through engaging and interactive environments. I have participated in the development of enterprise VR simulators, web-based AR experiences, and virtual worlds with real-time networking.</p>
+                <p data-en="I enjoy solving technical challenges, optimizing performance for immersive devices, and creating intuitive interaction systems that enhance user experience. I am always interested in exploring new technologies in XR, interactive storytelling, and real-time 3D development." data-es="Disfruto resolver desafios tecnicos, optimizar el rendimiento para dispositivos inmersivos y crear sistemas de interaccion intuitivos que mejoren la experiencia del usuario. Siempre estoy interesada en explorar nuevas tecnologias en XR, narrativa interactiva y desarrollo 3D en tiempo real.">I enjoy solving technical challenges, optimizing performance for immersive devices, and creating intuitive interaction systems that enhance user experience. I am always interested in exploring new technologies in XR, interactive storytelling, and real-time 3D development.</p>
+                <p class="about-location" data-en="Based in Bogota, Colombia — available for remote work and freelance projects." data-es="Ubicada en Bogota, Colombia — disponible para trabajo remoto y proyectos freelance."><i class="fas fa-map-marker-alt"></i> Based in Bogota, Colombia — available for remote work and freelance projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title" data-en="Skills & Expertise" data-es="Habilidades y experiencia">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3 data-en="Unity & Interactive Development" data-es="Desarrollo Unity e interactivo">Unity & Interactive Development</h3>
+                    <ul>
+                        <li data-en="3+ years developing interactive applications using Unity and C#" data-es="Mas de 3 anios desarrollando aplicaciones interactivas con Unity y C#">3+ years developing interactive applications using Unity and C#</li>
+                        <li data-en="Development of real-time 3D simulations and interactive experiences" data-es="Desarrollo de simulaciones 3D en tiempo real y experiencias interactivas">Development of real-time 3D simulations and interactive experiences</li>
+                        <li data-en="Implementation of gameplay systems, interaction mechanics, and UI logic" data-es="Implementacion de sistemas de gameplay, mecanicas de interaccion y logica de interfaz">Implementation of gameplay systems, interaction mechanics, and UI logic</li>
+                        <li data-en="Optimization of performance for real-time 3D applications" data-es="Optimizacion de rendimiento para aplicaciones 3D en tiempo real">Optimization of performance for real-time 3D applications</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-vr-cardboard"></i></div>
+                    <h3 data-en="XR Development (AR / VR / MR)" data-es="Desarrollo XR (AR / VR / MR)">XR Development (AR / VR / MR)</h3>
+                    <ul>
+                        <li data-en="Development of VR training simulators for enterprise environments" data-es="Desarrollo de simuladores de entrenamiento en VR para entornos empresariales">Development of VR training simulators for enterprise environments</li>
+                        <li data-en="Interactive AR experiences using Vuforia, ARKit, ARCore and AR Foundation" data-es="Experiencias de realidad aumentada interactivas usando Vuforia, ARKit, ARCore y AR Foundation">Interactive AR experiences using Vuforia, ARKit, ARCore and AR Foundation</li>
+                        <li data-en="Development of immersive XR applications with real-time interactions" data-es="Desarrollo de aplicaciones XR inmersivas con interacciones en tiempo real">Development of immersive XR applications with real-time interactions</li>
+                        <li data-en="Optimization for standalone VR devices such as Meta Quest" data-es="Optimizacion para dispositivos VR standalone como Meta Quest">Optimization for standalone VR devices such as Meta Quest</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-globe"></i></div>
+                    <h3 data-en="Multiplayer & Virtual Worlds" data-es="Multijugador y mundos virtuales">Multiplayer & Virtual Worlds</h3>
+                    <ul>
+                        <li data-en="Development of multi-user virtual environments and immersive experiences" data-es="Desarrollo de entornos virtuales multiusuario y experiencias inmersivas">Development of multi-user virtual environments and immersive experiences</li>
+                        <li data-en="Implementation of real-time networking systems using Photon PUN" data-es="Implementacion de sistemas de networking en tiempo real usando Photon PUN">Implementation of real-time networking systems using Photon PUN</li>
+                        <li data-en="Creation of interactive virtual worlds and metaverse environments" data-es="Creacion de mundos virtuales interactivos y entornos tipo metaverso">Creation of interactive virtual worlds and metaverse environments</li>
+                        <li data-en="Integration of voice communication systems for multiplayer experiences" data-es="Integracion de sistemas de comunicacion por voz para experiencias multijugador">Integration of voice communication systems for multiplayer experiences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title" data-en="Portfolio" data-es="Portafolio">Portfolio</h2>
+            <div class="portfolio-controls">
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all" data-en="All" data-es="Todos">All</button>
+                    <button class="filter-btn" data-filter="ar">AR</button>
+                    <button class="filter-btn" data-filter="vr">VR</button>
+                    <button class="filter-btn" data-filter="games" data-en="Games" data-es="Juegos">Games</button>
+                </div>
+                <div class="cv-buttons">
+                    <a href="img/CV/CV_CindySolano_EN-comprimido.pdf" download class="btn btn-small"><i class="fas fa-download"></i> CV (EN)</a>
+                    <a href="img/CV/CV_CindySolano_ES-comprimido.pdf" download class="btn btn-small"><i class="fas fa-download"></i> CV (ES)</a>
+                </div>
+            </div>
+
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- AR Projects -->
+                <div class="portfolio-item" data-category="ar" data-video="3M_AR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="3M Activation Brackets" data-es="Activacion brackets 3M">3M Activation Brackets</h3>
+                        <p data-en="Commercial sample of the adhesive for 3M brand brackets." data-es="Muestra comercial del adhesivo para brackets de la marca 3M.">Commercial sample of the adhesive for 3M brand brackets.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="CoralesARFinal">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="HP Activation Corals" data-es="Activacion HP Corales">HP Activation Corals</h3>
+                        <p data-en="Commercial activation for HP laptop with interactive specifications display." data-es="Activacion comercial para portatil HP con visualizacion interactiva de especificaciones.">Commercial activation for HP laptop with interactive specifications display.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="ManoARCompleto">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="Hand AR - Arthritis Awareness" data-es="Mano AR - Concientizacion artritis">Hand AR - Arthritis Awareness</h3>
+                        <p data-en="Convention invitation explaining arthritis effects on hands through interactive AR." data-es="Invitacion a convencion explicando los efectos de la artritis en las manos mediante AR interactiva.">Convention invitation explaining arthritis effects on hands through interactive AR.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="carreraObservacion">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="Observation Race" data-es="Carrera de observacion">Observation Race</h3>
+                        <p data-en="Multi-stand trivia event with real-time leaderboard and score tracking based on response time." data-es="Evento trivia con multiples stands, tabla de posiciones en tiempo real y seguimiento de puntajes por tiempo de respuesta.">Multi-stand trivia event with real-time leaderboard and score tracking based on response time.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="VetancoAR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="Medicine Video AR" data-es="Video medicina AR">Medicine Video AR</h3>
+                        <p data-en="Unity + ZapWorks project showcasing medicine benefits with chroma video integration." data-es="Proyecto Unity + ZapWorks mostrando beneficios de un medicamento con integracion de video chroma.">Unity + ZapWorks project showcasing medicine benefits with chroma video integration.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="BUG">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="BUG AR Experience" data-es="Experiencia AR BUG">BUG AR Experience</h3>
+                        <p data-en="Interactive AR experience exploring insect-themed content." data-es="Experiencia AR interactiva con contenido tematico de insectos.">Interactive AR experience exploring insect-themed content.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="OmenHP_AR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="HP Omen Activation" data-es="Activacion HP Omen">HP Omen Activation</h3>
+                        <p data-en="Commercial AR activation for HP Omen gaming laptop line." data-es="Activacion comercial AR para linea de portatiles gaming HP Omen.">Commercial AR activation for HP Omen gaming laptop line.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="Mompox1_AR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="Mompox Drums AR" data-es="Mompox Tambores AR">Mompox Drums AR</h3>
+                        <p data-en="AR experience showcasing the traditional drums and culture of Mompox." data-es="Experiencia AR mostrando los tambores tradicionales y la cultura de Mompox.">AR experience showcasing the traditional drums and culture of Mompox.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="Mompox2_AR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="Mompox Phrase AR" data-es="Mompox Frase AR">Mompox Phrase AR</h3>
+                        <p data-en="AR experience featuring cultural phrases and heritage of Mompox." data-es="Experiencia AR con frases culturales y herencia de Mompox.">AR experience featuring cultural phrases and heritage of Mompox.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="Nissan_AR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="Nissan AR Activation" data-es="Activacion AR Nissan">Nissan AR Activation</h3>
+                        <p data-en="Commercial AR activation for the Nissan brand." data-es="Activacion comercial AR para la marca Nissan.">Commercial AR activation for the Nissan brand.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ar" data-video="AbbotEnsure_AR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">AR</span>
+                        <h3 data-en="Abbott Ensure AR" data-es="Abbott Ensure AR">Abbott Ensure AR</h3>
+                        <p data-en="AR commercial experience for Abbott Ensure nutritional product." data-es="Experiencia comercial AR para el producto nutricional Abbott Ensure.">AR commercial experience for Abbott Ensure nutritional product.</p>
+                    </div>
+                </div>
+
+                <!-- VR Projects -->
+                <div class="portfolio-item" data-category="vr" data-video="SaintGobainVR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Saint Gobain Simulator" data-es="Simulador Saint Gobain">Saint Gobain Simulator</h3>
+                        <p data-en="VR forklift simulator showcasing the glass collection process for a display." data-es="Simulador VR de montacargas mostrando el proceso de recoleccion de vidrio para una vitrina.">VR forklift simulator showcasing the glass collection process for a display.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="ClinicaVR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Surgical Equipment Demo" data-es="Demo equipo quirurgico">Surgical Equipment Demo</h3>
+                        <p data-en="VR simulation for surgical space and instrument handling training." data-es="Simulacion VR para entrenamiento en espacio quirurgico y manejo de instrumentos.">VR simulation for surgical space and instrument handling training.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="CyberattackVR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Cyberattack Simulator" data-es="Simulador de ciberataque">Cyberattack Simulator</h3>
+                        <p data-en="Interactive hacker attack simulator with branching decisions that affect events and lighting." data-es="Simulador interactivo de ataque hacker con decisiones ramificadas que afectan eventos e iluminacion.">Interactive hacker attack simulator with branching decisions that affect events and lighting.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="SubestacionVR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Electrical Substation - La Quinta" data-es="Subestacion electrica - La Quinta">Electrical Substation - La Quinta</h3>
+                        <p data-en="Interactive simulation of a transformer substation energization sequence at La Quinta." data-es="Simulacion interactiva de la secuencia de energizacion de una subestacion transformadora en La Quinta.">Interactive simulation of a transformer substation energization sequence at La Quinta.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="SubestacionICEP">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Electrical Substation - ICEP" data-es="Subestacion electrica - ICEP">Electrical Substation - ICEP</h3>
+                        <p data-en="VR training simulator for ICEP electrical substation operations and safety procedures." data-es="Simulador VR de entrenamiento para operaciones y procedimientos de seguridad de la subestacion electrica ICEP.">VR training simulator for ICEP electrical substation operations and safety procedures.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="PWC360">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Climate Change 360" data-es="Cambio climatico 360">Climate Change 360</h3>
+                        <p data-en="360-degree visualization project with decision-based environments focused on climate change awareness." data-es="Proyecto de visualizacion 360 grados con entornos basados en decisiones, enfocado en la concientizacion sobre el cambio climatico.">360-degree visualization project with decision-based environments focused on climate change awareness.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="Kale2_VR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Kale Project - Part 2" data-es="Proyecto Kale - Parte 2">Kale Project - Part 2</h3>
+                        <p data-en="Guided VR tour through each oil drilling stage, highlighting geological layers." data-es="Tour VR guiado por cada etapa de perforacion petrolera, destacando capas geologicas.">Guided VR tour through each oil drilling stage, highlighting geological layers.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="CotelVR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Cotel - Hospitality Training" data-es="Cotel - Entrenamiento hotelero">Cotel - Hospitality Training</h3>
+                        <p data-en="Immersive VR training for hospitality staff covering essential skills and procedures." data-es="Entrenamiento VR inmersivo para personal hotelero cubriendo habilidades y procedimientos esenciales.">Immersive VR training for hospitality staff covering essential skills and procedures.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="VetancoVR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Vetanco VR" data-es="Vetanco VR">Vetanco VR</h3>
+                        <p data-en="VR training project for Vetanco veterinary medicine company." data-es="Proyecto VR de entrenamiento para la empresa veterinaria Vetanco.">VR training project for Vetanco veterinary medicine company.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="FiberglassVR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Fiberglass VR" data-es="Fiberglass VR">Fiberglass VR</h3>
+                        <p data-en="VR simulation of fiberglass production process and quality control." data-es="Simulacion VR del proceso de produccion y control de calidad de fibra de vidrio.">VR simulation of fiberglass production process and quality control.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="ArthurHolmesShowroom">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Arthur Holmes Showroom VR" data-es="Showroom VR Arthur Holmes">Arthur Holmes Showroom VR</h3>
+                        <p data-en="Virtual showroom experience allowing customers to explore Arthur Holmes products in VR." data-es="Experiencia de showroom virtual que permite a los clientes explorar los productos Arthur Holmes en VR.">Virtual showroom experience allowing customers to explore Arthur Holmes products in VR.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="SaintGobainHololensMR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="Saint Gobain Hololens MR" data-es="Saint Gobain Hololens MR">Saint Gobain Hololens MR</h3>
+                        <p data-en="Mixed Reality experience on Microsoft Hololens for Saint Gobain industrial training." data-es="Experiencia de Realidad Mixta en Microsoft Hololens para entrenamiento industrial de Saint Gobain.">Mixed Reality experience on Microsoft Hololens for Saint Gobain industrial training.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vr" data-video="ACUVUE_VR">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">VR</span>
+                        <h3 data-en="ACUVUE VR" data-es="ACUVUE VR">ACUVUE VR</h3>
+                        <p data-en="Immersive VR experience for ACUVUE contact lens brand activation." data-es="Experiencia VR inmersiva para la activacion de marca ACUVUE de lentes de contacto.">Immersive VR experience for ACUVUE contact lens brand activation.</p>
+                    </div>
+                </div>
+
+                <!-- Games -->
+                <div class="portfolio-item" data-category="games" data-video="ZonaConciertos">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag" data-en="Games" data-es="Juegos">Games</span>
+                        <h3 data-en="Concert Zone" data-es="Zona de conciertos">Concert Zone</h3>
+                        <p data-en="Concert zone experience in virtual worlds." data-es="Experiencia de zona de conciertos en mundos virtuales.">Concert zone experience in virtual worlds.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="games" data-video="MundoVirtual">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag" data-en="Games" data-es="Juegos">Games</span>
+                        <h3 data-en="Sanofi Virtual World" data-es="Mundo virtual Sanofi">Sanofi Virtual World</h3>
+                        <p data-en="Virtual space for Sanofi showcasing various interactive content." data-es="Espacio virtual para Sanofi mostrando diversos contenidos interactivos.">Virtual space for Sanofi showcasing various interactive content.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="games" data-video="Ecopetrol">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag" data-en="Games" data-es="Juegos">Games</span>
+                        <h3 data-en="Ecopetrol Mascot" data-es="Mascota Ecopetrol">Ecopetrol Mascot</h3>
+                        <p data-en="Motion capture event featuring the Ecopetrol company mascot brought to life." data-es="Evento de captura de movimiento con la mascota de Ecopetrol cobrada vida.">Motion capture event featuring the Ecopetrol company mascot brought to life.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="games" data-video="StencilDemo">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag" data-en="Games" data-es="Juegos">Games</span>
+                        <h3 data-en="Stencil Technique Demo" data-es="Demo tecnica Stencil">Stencil Technique Demo</h3>
+                        <p data-en="Unity stencil technique for selectively rendering 3D elements on screen." data-es="Tecnica stencil en Unity para renderizar selectivamente elementos 3D en pantalla.">Unity stencil technique for selectively rendering 3D elements on screen.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="games" data-video="FlappyBird_Game">
+                    <div class="portfolio-video"></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag" data-en="Games" data-es="Juegos">Games</span>
+                        <h3 data-en="Flappy Bird Game" data-es="Juego Flappy Bird">Flappy Bird Game</h3>
+                        <p data-en="Flappy Bird-inspired game developed as a mobile experience." data-es="Juego inspirado en Flappy Bird desarrollado como experiencia movil.">Flappy Bird-inspired game developed as a mobile experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="floating-icons">
+            <i class="fas fa-envelope float-icon" style="top:15%;left:10%;--delay:0s;--duration:6s;--size:1.3rem"></i>
+            <i class="fas fa-paper-plane float-icon" style="top:25%;right:12%;--delay:1.2s;--duration:5.5s;--size:1.1rem"></i>
+            <i class="fas fa-comments float-icon" style="bottom:20%;left:15%;--delay:2s;--duration:7s;--size:1.2rem"></i>
+            <i class="fas fa-handshake float-icon" style="bottom:30%;right:8%;--delay:0.5s;--duration:6.5s;--size:1rem"></i>
+            <i class="fas fa-heart float-icon" style="top:60%;left:5%;--delay:3s;--duration:5s;--size:0.9rem"></i>
+            <i class="fas fa-link float-icon" style="top:10%;right:30%;--delay:1.8s;--duration:7.5s;--size:1rem"></i>
+        </div>
+        <div class="container">
+            <h2 class="section-title" data-en="Get in Touch" data-es="Contacto">Get in Touch</h2>
+            <p class="contact-subtitle" data-en="Interested in working together? Let's connect!" data-es="Interesada en trabajar juntos? Conectemos!">Interested in working together? Let's connect!</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/cindy-carolina-solano-caycedo-735822181" target="_blank" class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:cindysolano.dev@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>cindysolano.dev@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p data-en="&copy; 2025 Cindy Solano. All Rights Reserved." data-es="&copy; 2025 Cindy Solano. Todos los derechos reservados.">&copy; 2025 Cindy Solano. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
