@@ -45,12 +45,12 @@ export default function ProjectModal({ project, lang, onClose }: Props) {
 
           {/* Panel */}
           <motion.div
-            className="relative w-full max-w-4xl rounded-[28px] overflow-hidden"
+            className="relative w-full max-w-4xl rounded-[20px] sm:rounded-[28px] overflow-hidden flex flex-col"
             style={{
               background: `linear-gradient(160deg, ${project.color}12 0%, rgba(14,6,22,0.99) 100%)`,
               border: `1px solid ${project.color}30`,
               boxShadow: `0 32px 80px rgba(0,0,0,0.65), 0 0 80px ${project.color}12`,
-              maxHeight: '90vh',
+              maxHeight: '92vh',
             }}
             initial={{ scale: 0.9, opacity: 0, y: 24 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -67,19 +67,17 @@ export default function ProjectModal({ project, lang, onClose }: Props) {
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-20 w-11 h-11 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-all duration-200 hover:scale-110 hover:bg-white/15"
-              style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.18)', fontSize: '1.1rem' }}
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-white/70 hover:text-white transition-all duration-200 hover:scale-110 hover:bg-white/15"
+              style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.18)', fontSize: '1rem' }}
             >
               ✕
             </button>
 
-            <div className={`flex ${project.vertical ? 'flex-col items-center' : 'flex-col lg:flex-row'} overflow-y-auto`}
-              style={{ maxHeight: '90vh' }}
-            >
+            <div className={`flex ${project.vertical ? 'flex-col items-center' : 'flex-col lg:flex-row'} overflow-y-auto`}>
               {/* Video */}
               {project.vertical ? (
-                <div className="w-full flex justify-center bg-black" style={{ maxHeight: '55vh' }}>
-                  <div style={{ width: '100%', maxWidth: 310, aspectRatio: '9/16', background: '#000' }}>
+                <div className="w-full flex justify-center bg-black flex-shrink-0" style={{ maxHeight: '45vh' }}>
+                  <div style={{ width: '100%', maxWidth: 260, aspectRatio: '9/16', background: '#000' }}>
                     <iframe
                       className="w-full h-full"
                       src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}?rel=0&autoplay=1&mute=0`}
@@ -92,7 +90,7 @@ export default function ProjectModal({ project, lang, onClose }: Props) {
                   </div>
                 </div>
               ) : (
-                <div className="lg:w-[56%] flex-shrink-0 bg-black" style={{ aspectRatio: '16/9' }}>
+                <div className="w-full lg:w-[56%] flex-shrink-0 bg-black" style={{ aspectRatio: '16/9', maxHeight: '42vh' }}>
                   <iframe
                     className="w-full h-full"
                     src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}?rel=0&autoplay=1&mute=0`}
@@ -106,7 +104,7 @@ export default function ProjectModal({ project, lang, onClose }: Props) {
               )}
 
               {/* Info panel */}
-              <div className="flex-1 p-7 flex flex-col gap-4 overflow-y-auto">
+              <div className="flex-1 p-4 sm:p-6 lg:p-7 flex flex-col gap-3 sm:gap-4 overflow-y-auto">
                 {/* Category tag */}
                 <span
                   className="self-start text-xs font-bold px-3 py-1.5 rounded-full tracking-wider uppercase"
@@ -120,12 +118,12 @@ export default function ProjectModal({ project, lang, onClose }: Props) {
                 </span>
 
                 {/* Title */}
-                <h3 className="font-display font-bold text-xl text-white leading-snug pr-8">
+                <h3 className="font-display font-bold text-base sm:text-xl text-white leading-snug pr-8">
                   {title}
                 </h3>
 
                 {/* Description */}
-                <p className="font-body text-sm text-white/62 leading-relaxed">
+                <p className="font-body text-xs sm:text-sm text-white/62 leading-relaxed">
                   {desc}
                 </p>
 
