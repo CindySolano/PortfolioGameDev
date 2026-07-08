@@ -2,32 +2,30 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import type { Project } from '../data/projects'
 import type { Lang } from '../data/i18n'
+import { ProjectIcon } from './ProjectIcons'
 
 interface Props {
   project: Project
   lang: Lang
   isCenter?: boolean
+  onOpen?: () => void
 }
 
-export default function ProjectCard({ project, lang, isCenter = false }: Props) {
-  const [flipped, setFlipped] = useState(false)
+export default function ProjectCard({ project, lang, isCenter = false, onOpen }: Props) {
   const [tilt, setTilt] = useState({ rx: 0, ry: 0 })
 
   const title = lang === 'en' ? project.titleEn : project.titleEs
   const desc = lang === 'en' ? project.descEn : project.descEs
 
   const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isCenter || flipped) return
+    if (!isCenter) return
     const rect = e.currentTarget.getBoundingClientRect()
     const rx = ((e.clientY - rect.top) / rect.height - 0.5) * 10
     const ry = ((e.clientX - rect.left) / rect.width - 0.5) * -10
     setTilt({ rx, ry })
   }
 
-  const onMouseLeave = () => {
-    setTilt({ rx: 0, ry: 0 })
-    if (flipped) setFlipped(false)
-  }
+  const onMouseLeave = () => setTilt({ rx: 0, ry: 0 })
 
   const cardW = isCenter ? 300 : 220
   const cardH = isCenter ? 400 : 300
@@ -37,7 +35,7 @@ export default function ProjectCard({ project, lang, isCenter = false }: Props) 
       style={{ width: cardW, height: cardH, perspective: 1000, flexShrink: 0, userSelect: 'none' }}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      onClick={() => isCenter && setFlipped((f) => !f)}
+      onClick={() => { if (isCenter && onOpen) onOpen() }}
       data-cursor={isCenter ? (lang === 'en' ? 'watch' : 'ver') : undefined}
     >
       <motion.div
@@ -45,18 +43,9 @@ export default function ProjectCard({ project, lang, isCenter = false }: Props) 
           width: '100%', height: '100%',
           position: 'relative',
           transformStyle: 'preserve-3d',
-          rotateX: flipped ? 0 : tilt.rx,
-          rotateY: flipped ? 180 : tilt.ry,
         }}
-        animate={{
-          rotateX: flipped ? 0 : tilt.rx,
-          rotateY: flipped ? 180 : tilt.ry,
-        }}
-        transition={
-          flipped
-            ? { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
-            : { duration: 0.15, ease: 'easeOut' }
-        }
+        animate={{ rotateX: tilt.rx, rotateY: tilt.ry }}
+        transition={{ duration: 0.15, ease: 'easeOut' }}
       >
         {/* FRONT */}
         <div
@@ -90,15 +79,28 @@ export default function ProjectCard({ project, lang, isCenter = false }: Props) 
           />
 
           {/* Center content */}
-          <div className="flex-1 flex flex-col items-center justify-center text-center px-2 relative z-10">
+          <div className="flex-1 flex flex-col items-center justify-center text-center px-2 relative z-10 gap-3">
+            {/* SVG icon with glow */}
+            <div
+              className="rounded-2xl flex items-center justify-center flex-shrink-0"
+              style={{
+                width: isCenter ? 64 : 48,
+                height: isCenter ? 64 : 48,
+                background: `radial-gradient(circle, ${project.color}20, transparent 70%)`,
+                filter: `drop-shadow(0 0 ${isCenter ? 12 : 8}px ${project.color}60)`,
+              }}
+            >
+              <ProjectIcon iconKey={project.icon} color={project.color} size={isCenter ? 38 : 28} />
+            </div>
+
             <h3
-              className="font-display font-bold text-white leading-snug mb-3"
-              style={{ fontSize: isCenter ? '1.15rem' : '0.9rem' }}
+              className="font-display font-bold text-white leading-snug"
+              style={{ fontSize: isCenter ? '1.05rem' : '0.82rem' }}
             >
               {title}
             </h3>
             {isCenter && (
-              <p className="text-xs text-white/55 leading-relaxed line-clamp-3">{desc}</p>
+              <p className="text-xs text-white/55 leading-relaxed line-clamp-2">{desc}</p>
             )}
           </div>
 
@@ -122,44 +124,6 @@ export default function ProjectCard({ project, lang, isCenter = false }: Props) 
               </span>
             </div>
           )}
-        </div>
-
-        {/* BACK — YouTube iframe */}
-        <div
-          className="absolute inset-0 rounded-[22px] overflow-hidden flex flex-col"
-          style={{
-            backfaceVisibility: 'hidden',
-            transform: 'rotateY(180deg)',
-            background: '#000',
-            border: `1px solid ${project.color}40`,
-            boxShadow: `0 24px 60px ${project.color}25`,
-          }}
-        >
-          {flipped ? (
-            <iframe
-              className="w-full flex-1"
-              src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}?rel=0&autoplay=1`}
-              title={title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-              style={{ border: 'none', display: 'block' }}
-            />
-          ) : (
-            <div className="w-full flex-1 bg-black" />
-          )}
-          <div
-            className="px-4 py-2.5 flex items-center justify-between"
-            style={{ background: `linear-gradient(90deg, ${project.color}15, rgba(16,8,24,0.9))` }}
-          >
-            <span className="text-xs font-semibold text-white/80 truncate">{title}</span>
-            <span
-              className="text-xs px-2 py-0.5 rounded-full flex-shrink-0 ml-2"
-              style={{ background: `${project.color}25`, color: project.color, border: `1px solid ${project.color}40` }}
-            >
-              {project.tag}
-            </span>
-          </div>
         </div>
       </motion.div>
     </div>

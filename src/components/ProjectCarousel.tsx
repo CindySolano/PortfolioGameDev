@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { projects, type ProjectCategory } from '../data/projects'
+import { projects, type Project, type ProjectCategory } from '../data/projects'
 import { t, tr, type Lang } from '../data/i18n'
 import ProjectCard from './ProjectCard'
+import ProjectModal from './ProjectModal'
 import MagneticButton from './MagneticButton'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -18,6 +19,7 @@ export default function ProjectCarousel({ lang }: Props) {
   const trackRef = useRef<HTMLDivElement>(null)
   const [filter, setFilter] = useState<Filter>('all')
   const [centerIdx, setCenterIdx] = useState(0)
+  const [modalProject, setModalProject] = useState<Project | null>(null)
   const isDragging = useRef(false)
   const startX = useRef(0)
   const scrollStart = useRef(0)
@@ -100,7 +102,7 @@ export default function ProjectCarousel({ lang }: Props) {
     { key: 'all', label: t.portfolio.filterAll },
     { key: 'ar', label: t.portfolio.filterAr },
     { key: 'vr', label: t.portfolio.filterVr },
-    { key: 'games', label: t.portfolio.filterGames },
+    { key: 'interactive', label: t.portfolio.filterGames },
   ]
 
   return (
@@ -188,7 +190,12 @@ export default function ProjectCarousel({ lang }: Props) {
             }}
             onClick={() => goTo(i)}
           >
-            <ProjectCard project={project} lang={lang} isCenter={i === centerIdx} />
+            <ProjectCard
+              project={project}
+              lang={lang}
+              isCenter={i === centerIdx}
+              onOpen={i === centerIdx ? () => setModalProject(project) : undefined}
+            />
           </div>
         ))}
       </div>
@@ -234,6 +241,12 @@ export default function ProjectCarousel({ lang }: Props) {
           {centerIdx + 1} / {filtered.length}
         </span>
       </div>
+
+      <ProjectModal
+        project={modalProject}
+        lang={lang}
+        onClose={() => setModalProject(null)}
+      />
     </section>
   )
 }

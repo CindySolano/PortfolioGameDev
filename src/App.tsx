@@ -13,13 +13,13 @@ import Footer from './components/Footer'
 import StarField from './components/StarField'
 
 export default function App() {
-  const [lang, setLang] = useState<Lang>('en')
+  const [lang, setLang] = useState<Lang>('es')
   const [loaded, setLoaded] = useState(false)
 
   useLenis()
 
-  const toggleLang = useCallback(() => {
-    setLang((l) => (l === 'en' ? 'es' : 'en'))
+  const toggleLang = useCallback((l: Lang) => {
+    setLang(l)
   }, [])
 
   const scrollTo = useCallback((id: string) => {

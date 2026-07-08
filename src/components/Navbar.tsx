@@ -5,7 +5,7 @@ import MagneticButton from './MagneticButton'
 
 interface Props {
   lang: Lang
-  onLangToggle: () => void
+  onLangToggle: (l: Lang) => void
 }
 
 const navItems = [
@@ -89,13 +89,32 @@ export default function Navbar({ lang, onLangToggle }: Props) {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
-          {/* Lang toggle */}
-          <button
-            onClick={onLangToggle}
-            className="text-xs font-semibold px-3 py-1.5 rounded-full border border-white/15 text-white/70 hover:text-white hover:border-white/30 transition-all duration-200 bg-transparent"
+          {/* Lang slider */}
+          <div
+            className="flex items-center rounded-full p-0.5 relative"
+            style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)' }}
           >
-            {lang === 'en' ? 'ES' : 'EN'}
-          </button>
+            {(['en', 'es'] as Lang[]).map((l) => (
+              <button
+                key={l}
+                onClick={() => onLangToggle(l)}
+                className="relative z-10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-200 bg-transparent border-none"
+                style={{ color: lang === l ? 'white' : 'rgba(255,255,255,0.4)' }}
+              >
+                {l}
+              </button>
+            ))}
+            {/* Sliding pill */}
+            <div
+              className="absolute top-0.5 bottom-0.5 rounded-full transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))',
+                boxShadow: '0 0 10px rgba(230,70,154,0.4)',
+                width: 'calc(50% - 2px)',
+                left: lang === 'en' ? '2px' : 'calc(50%)',
+              }}
+            />
+          </div>
 
           {/* Contact CTA */}
           <MagneticButton

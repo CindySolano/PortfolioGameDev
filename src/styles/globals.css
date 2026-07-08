@@ -42,6 +42,10 @@
   /* Hide native cursor for custom cursor */
   * { cursor: none !important; user-select: none; }
 
+  /* Restore real cursor inside modal (iframe captures events, custom cursor lags) */
+  .project-modal-overlay,
+  .project-modal-overlay * { cursor: default !important; }
+
   /* Scrollbar */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--color-bg); }
